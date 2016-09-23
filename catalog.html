@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&subset=cyrillic" rel="stylesheet">
 </head>        
 <body>
-
 <div class="index-wrapper">
 <div class="content-wrapper">
   <header class="page-header">
@@ -18,7 +17,8 @@
     </div>
     <nav class="main-nav__items">
       <ul>
-          <li class="main-nav__item"><a href="" class="main-nav__link ">Каталог</a>
+          <li class="main-nav__item">
+          <span class="main-nav__link  main-nav__link--current">Каталог</span>
             <ul class="main-nav__submenu">
               <li class="main-submenu_item"><a class="main-submenu__link  main-submenu__link--news" href="">Новинки</a></li>
               <li class="main-submenu_item"><a class="main-submenu__link" href="">Сливочное</a></li>
@@ -31,11 +31,11 @@
           <li class="main-nav__item"><a class="main-nav__link" href="#">О Компании</a></li>
       </ul>            
     </nav>
-        <div class="user-block user-block--flright">
+        <div class="user-block to-right">
          <div class="user-block__search">     
           <div class="user-block__search-form">
            <form action="search.php" method="GET">
-             <input class="search-form__item" type="text" name="search" placeholder="Что ищем?">
+             <input class="search-form__field" type="text" name="search" placeholder="Что ищем?">
            </form>
            </div>
          </div>
@@ -56,7 +56,7 @@
           </div>
 
         <div class="user-block__cart  user-block__cart--field">
-        <span>2 товара</span>
+        <span>1 товар</span>
         <div class="user-block__cart-full">
         <table class="cart-items">
             <tr>
@@ -90,17 +90,17 @@
        
   </header>
 
-<main class="main-content">
+<main class="main-content clearfix">
 
   <div class="content-wrapper">
+    
     <div class="catalog">
-
     <h3 class="catalog__title">Сливочное мороженое</h3>
 
-    <form class="catalog__filter" action="#" method="GET">
+    <form class="filter" action="https://echo.htmlacademy.ru" method="GET">
       <fieldset>
         <legend>Сортировка:</legend>
-        <select class="catalog__filter-select" name="popular">
+        <select class="filter__select" name="popular">
           <option value="popular">по популярности</option>
           <option value="high-price">сначала подороже</option>
           <option value="low-price">сначала подешману</option>
@@ -109,38 +109,38 @@
 
       <fieldset>
         <legend>Цена 100 руб. - 500 руб.</legend>
-        <div class="catalog__filter-price">
-          <div class="catalog__filter-bar"></div>
-          <div class="catalog__filter-rabngeBar"></div>
-          <div class="catalog__filter-toggle  catalog__filter-toggle--min"></div>
-          <div class="catalog__filter-toggle  catalog__filter-toggle--max"></div>
+        <div class="filter__price">
+          <div class="filter__price-bar"></div>
+          <div class="filter__price-rangeBar"></div>
+          <div class="filter__price-toggle  filter__price-toggle--min"></div>
+          <div class="filter__price-toggle  filter__price-toggle--max"></div>
         </div>
       </fieldset>
 
       <fieldset>
         <legend>Жирность:</legend>
-        <div class="fat-wrapper">
-        <label><input class="catalog__filter-fat" type="radio" name="fat" value="0%" checked> <span class="catalog__fat-indicator">0%</span></label>
-         <label><input class="catalog__filter-fat" type="radio" name="fat" value="0%"><span class="catalog__fat-indicator">до 10%</span></label>
-         <label><input class="catalog__filter-fat" type="radio" name="fat" value="0%"><span class="catalog__fat-indicator">до 30%</span></label>
-         <label><input class="catalog__filter-fat" type="radio" name="fat" value="0%"><span class="catalog__fat-indicator">выше 30%</span></label>
+        <div class="filter__fat">
+          <label><input class="filter__fat-item" type="radio" name="fat" value="0%"><span class="filter__fat-indicator">0%</span></label>
+          <label><input class="filter__fat-item" type="radio" name="fat" value="10%"><span class="filter__fat-indicator">до 10%</span></label>
+          <label><input class="filter__fat-item" type="radio" name="fat" value="low-30%"><span class="filter__fat-indicator">до 30%</span></label>
+          <label><input class="filter__fat-item" type="radio" name="fat" value="more-30%"><span class="filter__fat-indicator">выше 30%</span></label>
          </div>
       </fieldset>
 
       <fieldset>
         <legend>Наполнители:</legend>
-        <div class="fill-wrapper">
-        <label><input class="catalog__filter-fill" type="checkbox" name="fat" value="0%" checked> <span class="catalog__fill-indicator">Шоколадное</span></label>
-         <label><input class="catalog__filter-fill" type="checkbox" name="fat" value="0%"><span class="catalog__fill-indicator">сахарные присыпки</span></label>
-         <label><input class="catalog__filter-fill" type="checkbox" name="fat" value="0%"><span class="catalog__fill-indicator">фрукты</span></label>
-         <label><input class="catalog__filter-fill" type="checkbox" name="fat" value="0%"><span class="catalog__fill-indicator">сиропы</span></label>
-         <label><input class="catalog__filter-fill" type="checkbox" name="fat" value="0%"><span class="catalog__fill-indicator">джемы</span></label>
+        <div class="filter__fill">
+        <label><input class="filter__fill-item" type="checkbox" name="fill" value="chockolate" checked> <span class="filter__fill-indicator">Шоколадное</span></label>
+         <label><input class="filter__fill-item" type="checkbox" name="fill" value="shugar-"><span class="filter__fill-indicator">сахарные присыпки</span></label>
+         <label><input class="filter__fill-item" type="checkbox" name="fill" value="fruit"><span class="filter__fill-indicator">фрукты</span></label>
+         <label><input class="filter__fill-item" type="checkbox" name="fill" value="sirop"><span class="filter__fill-indicator">сиропы</span></label>
+         <label><input class="filter__fill-item" type="checkbox" name="ffill" value="jam"><span class="filter__fill-indicator">джемы</span></label>
          </div>
       </fieldset>
-      <button class="filter__submit" type="submit">Отправить</button>
+      <button class="filter__submit" type="submit">Применить</button>
       </form>
-      <div class="catalog__wrapper">
 
+      <div class="catalog__wrapper">
       <div class="card-items">
       <div class="card-items__hover">
         <button class="btn btn--fast-preview">Быстрый просмотр</button>
@@ -151,23 +151,7 @@
       </div>
        <div class="card-items">
         <img class="card-items__image" src="img/lime-and-citr.png" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
-         <span class="card-items__price">310 &#8381;;/кг</span>
-        <a class="card-items__description" href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
-        <div class="card-items__hover">
-          <button class="btn btn--fast-preview">Быстрый просмотр</button>
-        </div>      
-      </div>
-       <div class="card-items">
-        <img class="card-items__image" src="img/lime-and-citr.png" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
          <span class="card-items__price">310 &#8381;/кг</span>
-        <a class="card-items__description" href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
-        <div class="card-items__hover">
-          <button class="btn btn--fast-preview">Быстрый просмотр</button>
-        </div>      
-      </div>
-       <div class="card-items">
-        <img class="card-items__image" src="img/lime-and-citr.png" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
-         <span class="card-items__price">310 &#8381;;/кг</span>
         <a class="card-items__description" href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
         <div class="card-items__hover">
           <button class="btn btn--fast-preview">Быстрый просмотр</button>
@@ -237,44 +221,76 @@
           <button class="btn btn--fast-preview">Быстрый просмотр</button>
         </div>      
       </div>
-  
+       <div class="card-items">
+        <img class="card-items__image" src="img/lime-and-citr.png" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
+         <span class="card-items__price">310 &#8381;/кг</span>
+        <a class="card-items__description" href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
+        <div class="card-items__hover">
+          <button class="btn btn--fast-preview">Быстрый просмотр</button>
+        </div>      
       </div>
+       <div class="card-items">
+          <img class="card-items__image" src="img/lime-and-citr.png" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
+           <span class="card-items__price">310 &#8381;/кг</span>
+          <a class="card-items__description" href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
+          <div class="card-items__hover">
+            <button class="btn btn--fast-preview">Быстрый просмотр</button>
+          </div>      
+        </div>  
+
+      </div>
+      <ul class="pagination to-right">
+        <li class="pagination__item">
+          <span class="pagination__link-prev  pagination__link--disabled"></span>
+        </li>
+        <li class="pagination__item">
+          <span class="pagination__link  pagination__link--current">1</span>
+        </li>
+        <li class="pagination__item">
+          <a class="pagination__link" href="#">2</a>
+        </li>
+        <li class="pagination__item">
+          <a class="pagination__link" href="#">3</a>
+        </li>
+        <li class="pagination__item">
+          <a class="pagination__link" href="#">4</a>
+        </li>
+        <li class="pagination__item">
+          <a class="pagination__link" href="#">5</a>
+        </li>
+        <li class="pagination__item">
+          <a class="pagination__link-next" href="#"></a>
+        </li>
+      </ul>
     </div>
   </div>
 </main>
-
-  
-    
-
-
-<div class="content-wrapper">
+  <div class="content-wrapper">
     <footer class="page-footer ">
-         <div class="footer-social">
-          <a class="social__btn social__btn--tw" href="http://twitter.com">Twitter</a>
-          <a class="social__btn social__btn--inst" href="http://instagram.com">Instagram</a>
-          <a class="social__btn social__btn--fb" href="http://facebook.com">Facebook</a>
-          <a class="social__btn social__btn--vk" href="http://vk.com">Vkontakte</a>
-        </div>
+      <div class="footer-social">
+        <a class="social__btn social__btn--tw" href="http://twitter.com">Twitter</a>
+        <a class="social__btn social__btn--inst" href="http://instagram.com">Instagram</a>
+        <a class="social__btn social__btn--fb" href="http://facebook.com">Facebook</a>
+        <a class="social__btn social__btn--vk" href="http://vk.com">Vkontakte</a>
+      </div>
 
-        <div class="footer-menu">
-          <div class="footer-menu__column footer-menu__column--left">
-            <a href="#">Для поставщиков</a>
-            <a href="#">О производстве</a>
-          </div>
-          <div class="footer-menu__column">
-            <a href="#">Наши документы</a>
-            <a  href="#">Экологические стандарты</a>
-          </div>    
+      <div class="footer-menu">
+        <div class="footer-menu__column footer-menu__column--left">
+          <a href="#">Для поставщиков</a>
+          <a href="#">О производстве</a>
         </div>
+        <div class="footer-menu__column">
+          <a href="#">Наши документы</a>
+          <a  href="#">Экологические стандарты</a>
+        </div>    
+      </div>
 
-        <div class="copyrigt">
-          <a href="http://www.htmlacademy.ru"><img src="img/html-academy-logo.svg" alt="HTML acadeny" width="108" height="37"></a>
-          <p class="copiright__link">Сделано в <a href="http://www.htmlacademy.ru">HTML Academy</a> &copy; 2016</p>
-        </div>
-          </footer> 
-</div>   
-</div>
-</div>
+      <div class="copyrigt">
+        <a href="http://www.htmlacademy.ru"><img src="img/html-academy-logo.svg" alt="HTML acadeny" width="108" height="37"></a>
+        <p class="copiright__link">Сделано в <a href="http://www.htmlacademy.ru">HTML Academy</a> &copy; 2016</p>
+      </div>
+    </footer> 
+  </div>   
   <div class="modal-content-feedback">
     <h3 class="modal-content-feedback__title">Мы обязательно вам ответим!</h3>
     <button class="modal-content-feedback__close">Закрыть</button>
@@ -283,9 +299,10 @@
       <input type="email" name="email" placeholder="Ваша почта для ответа?">
       <textarea name="text-message" cols="30" rows="10" placeholder="Напишите что-нибудь..."></textarea>
       <button class="btn btn--middle" type="submit">Отправить</button>
-
     </form>
   </div>
+</div>
+</div>
   <script type="text/javascript" src="js/modal.js"></script>
 </body>
 </html>
